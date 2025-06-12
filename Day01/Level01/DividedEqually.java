@@ -1,4 +1,4 @@
-package Day01.Level01;
+ 
 
 public class DividedEqually {
     public static void main(String[] args) {

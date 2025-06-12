@@ -1,4 +1,4 @@
-package Day01.Level01;
+ 
 
 public class Discount {
     public static void main(String[] args) {
