@@ -1,7 +1,8 @@
+import java.util.Scanner;
 
 public class AreaOfTriangle {
     public static void main(String[] args) {
-        java.util.Scanner scanner = new java.util.Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
         System.out.print("Enter the base of the triangle in cm: ");
         double base = scanner.nextDouble();
