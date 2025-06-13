@@ -1,4 +1,4 @@
-package Day02.Level01;
+package ControlFlow.Level01;
 
 import java.util.Scanner;
 
@@ -11,7 +11,6 @@ public class DivisibltyBy5 {
             System.out.println("Is the number " + number + " divisible by 5? Yes");
         } else {
             System.out.println("Is the number " + number + " divisible by 5? No");
-        }
-        scanner.close();
+        }    
     }
 }
