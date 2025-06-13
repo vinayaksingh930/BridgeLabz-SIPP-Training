@@ -7,6 +7,5 @@ public class Sideofthesquare {
         double perimeter = scanner.nextDouble();
         double side = perimeter / 4;
         System.out.println("The length of the side is " + side + " whose perimeter is " + perimeter);
-        scanner.close();
     }
 }
