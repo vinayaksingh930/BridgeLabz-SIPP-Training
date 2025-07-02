@@ -36,7 +36,7 @@ class Waiter extends Person implements Worker {
 public class RestaurantManagement {
     public static void main(String[] args) {
         Worker chef = new Chef("John", 1);
-        Worker waiter = new Waiter("Alice", 2);
+        Worker waiter = new Waiter("Prachi", 2);
 
         System.out.println("Chef: " + chef.getClass().getSimpleName() + ", Name: " + ((Person) chef).name + ", ID: " + ((Person) chef).id);
         chef.performDuties(); // Output: Cooking

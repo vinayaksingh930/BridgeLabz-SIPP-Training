@@ -51,8 +51,8 @@ class Intern extends Employee {
 }
 public class EmployeeManagementSystem {
     public static void main(String[] args) {
-        Employee emp1 = new Manager("Alice", 101, 80000, 5);
-        Employee emp2 = new Developer("Bob", 102, 60000, "Java");
+        Employee emp1 = new Manager("Prachi", 101, 80000, 5);
+        Employee emp2 = new Developer(" Vinayak", 102, 60000, "Java");
         Employee emp3 = new Intern("Charlie", 103, 20000);
 
         emp1.displayDetails();

@@ -34,7 +34,7 @@ class Staff extends Person {
 public class SchoolSystem {
     public static void main(String[] args) {
         Teacher teacher = new Teacher("Mr. Smith", 40, "Mathematics");
-        Student student = new Student("Alice", 16, 10);
+        Student student = new Student("Prachi", 16, 10);
         Staff staff = new Staff("Mrs. Johnson", 35);
 
         System.out.println("Teacher: " + teacher.name + ", Age: " + teacher.age + ", Subject: " + teacher.subject);
