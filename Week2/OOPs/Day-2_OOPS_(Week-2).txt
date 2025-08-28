@@ -1,0 +1,87 @@
+//Traffic Signal Simulation (Easy)
+
+Enum TrafficLight
+    RED
+    YELLOW
+    GREEN
+
+Class SignalController
+    Attributes:
+        currentLight (TrafficLight)
+        timeInterval
+    Methods:
+        switchLight():
+            If currentLight == RED:
+                currentLight = GREEN
+                Print "Signal changed to GREEN. Vehicles can go."
+            Else if currentLight == GREEN:
+                currentLight = YELLOW
+                Print "Signal changed to YELLOW. Vehicles should slow down."
+            Else if currentLight == YELLOW:
+                currentLight = RED
+                Print "Signal changed to RED. Vehicles must stop."
+
+        showCurrentLight():
+            Print "Current Signal: " + currentLight
+
+Main Program (Traffic Signal):
+    Create SignalController obj controller1 (currentLight = RED, timeInterval = 30)
+
+    controller1.showCurrentLight()
+    controller1.switchLight()
+    controller1.showCurrentLight()
+    controller1.switchLight()
+    controller1.showCurrentLight()
+
+
+
+**************************************************************************************************************************
+
+
+
+//Smart Farming System (Moderate)
+
+Abstract Class Crop
+    Attributes:
+        name
+    Methods:
+        waterRequirement()   // Abstract
+        harvest()            // Abstract
+
+Class Rice extends Crop
+    Methods:
+        waterRequirement():
+            Print "Rice requires high water (about 5000 liters per kg)."
+        harvest():
+            Print "Rice is harvested after 120 days."
+
+Class Wheat extends Crop
+    Methods:
+        waterRequirement():
+            Print "Wheat requires moderate water (about 1500 liters per kg)."
+        harvest():
+            Print "Wheat is harvested after 90 days."
+
+Class Farmer
+    Attributes:
+        farmerName
+        crops (List of Crop)
+    Methods:
+        addCrop(crop):
+            Add crop to crops
+        showCrops():
+            For each crop in crops:
+                Print crop.name
+                crop.waterRequirement()
+                crop.harvest()
+
+Main Program (Smart Farming):
+    Create Farmer obj farmer1 (farmerName="Ramesh")
+
+    Create Rice crop1 (name="Rice")
+    Create Wheat crop2 (name="Wheat")
+
+    farmer1.addCrop(crop1)
+    farmer1.addCrop(crop2)
+
+    farmer1.showCrops()
