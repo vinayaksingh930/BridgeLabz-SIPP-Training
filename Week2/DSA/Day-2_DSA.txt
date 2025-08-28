@@ -1,0 +1,117 @@
+//Online Quiz Timer (Easy)
+
+Class CircularArray
+    Attributes:
+        timeSlots[]   // array of time intervals for each question
+        size
+        front
+        rear
+    Methods:
+        isFull():
+            Return ((rear + 1) % size == front)
+        isEmpty():
+            Return (front == -1)
+        enqueue(time):
+            If isFull():
+                Print "Timer slots are full"
+            Else if front == -1:
+                front = 0
+                rear = 0
+                timeSlots[rear] = time
+            Else:
+                rear = (rear + 1) % size
+                timeSlots[rear] = time
+        dequeue():
+            If isEmpty():
+                Print "No more time slots"
+                Return -1
+            Else if front == rear:
+                temp = timeSlots[front]
+                front = -1
+                rear = -1
+                Return temp
+            Else:
+                temp = timeSlots[front]
+                front = (front + 1) % size
+                Return temp
+
+Class QuizTimer
+    Attributes:
+        questions[]   // List of questions
+        timer (CircularArray)
+    Methods:
+        startQuiz():
+            For each question in questions:
+                slotTime = timer.dequeue()
+                If slotTime == -1:
+                    Print "No timer available"
+                    Break
+                Print "Question: " + question + " (Time: " + slotTime + " sec)"
+                If slotTime <= 5:
+                    Print "Warning: Only few seconds left!"
+
+Main Program (Quiz Timer):
+    Create CircularArray obj timer1 (size=5)
+    timer1.enqueue(10)
+    timer1.enqueue(15)
+    timer1.enqueue(5)
+
+    Create QuizTimer obj quiz1 (questions=["Q1","Q2","Q3"], timer=timer1)
+    quiz1.startQuiz()
+
+
+
+**************************************************************************************************************************
+
+
+
+//Job Scheduler (Moderate)
+
+Class Job
+    Attributes:
+        jobID
+        deadline
+        processingTime
+    Methods:
+        showJob():
+            Print jobID, deadline, processingTime
+
+Class PriorityQueue
+    Attributes:
+        jobs[]   // list of Job
+    Methods:
+        insert(job):
+            Add job to jobs
+            Sort jobs by deadline (earliest first), then by processingTime (smallest first)
+        extractNext():
+            If jobs is empty:
+                Print "No jobs available"
+                Return null
+            Else:
+                Return and remove first job from jobs
+
+Class JobScheduler
+    Attributes:
+        pq (PriorityQueue)
+    Methods:
+        addJob(job):
+            pq.insert(job)
+        processJobs():
+            While pq is not empty:
+                currentJob = pq.extractNext()
+                Print "Processing Job: " + currentJob.jobID
+                Print "Deadline: " + currentJob.deadline + ", Time: " + currentJob.processingTime
+
+Main Program (Job Scheduler):
+    Create PriorityQueue obj pq1
+    Create JobScheduler obj scheduler1 (pq = pq1)
+
+    Create Job j1 (jobID="J1", deadline=3, processingTime=2)
+    Create Job j2 (jobID="J2", deadline=1, processingTime=1)
+    Create Job j3 (jobID="J3", deadline=2, processingTime=3)
+
+    scheduler1.addJob(j1)
+    scheduler1.addJob(j2)
+    scheduler1.addJob(j3)
+
+    scheduler1.processJobs()

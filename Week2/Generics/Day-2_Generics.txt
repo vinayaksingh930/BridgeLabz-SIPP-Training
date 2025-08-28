@@ -1,0 +1,89 @@
+//Online Store Cart System (Easy)
+
+Class Item
+    Attributes:
+        name
+        price
+    Methods:
+        showItem():
+            Print name, price
+
+Class Cart
+    Attributes:
+        items (List<Item>)
+    Methods:
+        addItem(item):
+            Add item to items
+        showCart():
+            For each item in items:
+                item.showItem()
+        generic calculateTotalPrice(List<T> items):
+            total = 0
+            For each element in items:
+                If element is Item:
+                    total = total + element.price
+            Return total
+
+Main Program (Online Store):
+    Create Cart obj cart1
+    Create Item i1 (name="Laptop", price=50000)
+    Create Item i2 (name="Mouse", price=500)
+
+    cart1.addItem(i1)
+    cart1.addItem(i2)
+
+    cart1.showCart()
+    Print "Total Price: " + cart1.calculateTotalPrice(cart1.items)
+    
+
+
+**************************************************************************************************************************
+
+
+
+//Hospital Department Mapper (Moderate)
+
+Class Doctor
+    Attributes:
+        name
+        specialization
+    Methods:
+        showDoctor():
+            Print name, specialization
+
+Class Hospital
+    Attributes:
+        departmentDoctors (Map<String, List<Doctor>>)
+    Methods:
+        addDoctor(department, doctor):
+            If department not in departmentDoctors:
+                Create new List<Doctor>
+                departmentDoctors[department] = list
+            Add doctor to departmentDoctors[department]
+
+        showDepartments():
+            For each department in departmentDoctors:
+                Print "Department: " + department
+                For each doctor in departmentDoctors[department]:
+                    doctor.showDoctor()
+
+        filterDoctorsBySpecialization(specialization):
+            Print "Filtering doctors with specialization: " + specialization
+            For each department in departmentDoctors:
+                For each doctor in departmentDoctors[department]:
+                    If doctor.specialization == specialization:
+                        doctor.showDoctor()
+
+Main Program (Hospital Mapper):
+    Create Hospital obj hospital1
+
+    Create Doctor d1 (name="Dr. Sharma", specialization="Cardiology")
+    Create Doctor d2 (name="Dr. Verma", specialization="Neurology")
+    Create Doctor d3 (name="Dr. Gupta", specialization="Cardiology")
+
+    hospital1.addDoctor("Cardiology", d1)
+    hospital1.addDoctor("Neurology", d2)
+    hospital1.addDoctor("Cardiology", d3)
+
+    hospital1.showDepartments()
+    hospital1.filterDoctorsBySpecialization("Cardiology")
